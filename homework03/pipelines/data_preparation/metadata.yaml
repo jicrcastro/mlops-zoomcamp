@@ -1,0 +1,24 @@
+blocks:
+- block_type: data_loader
+  downstream_blocks:
+  - prepare_data
+  name: load_data_from_web
+  status: EXECUTED
+  uuid: f29cce7a-6453-4096-afe8-ce15d4cb9176
+- block_type: transformer
+  downstream_blocks:
+  - train_model
+  name: prepare_data
+  status: EXECUTED
+  upstream_blocks:
+  - load_data_from_web
+  uuid: 00da7c9e-1cf0-4fc9-a6f8-de306da6f0e8
+- block_type: transformer
+  downstream_blocks: []
+  name: train_model
+  status: EXECUTED
+  upstream_blocks:
+  - prepare_data
+  uuid: b5462837-9c69-4a26-8ee5-703ece88c864
+name: taxi_pipeline
+uuid: 1fb0e729-5786-4fc1-8293-9c87c88d66df
